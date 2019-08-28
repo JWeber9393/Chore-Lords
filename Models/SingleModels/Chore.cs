@@ -16,10 +16,17 @@ namespace ChoreLords.Models
         public int Money;
         public int JobXp;
         public Chore(string title, int money, int jobXp)
-        { 
+        {
+            
+        }
+        public string Description;
+
+        public Chore(string title, int money, int jobXp, string description)
+        {
             Title = title;
             Money = money;
             JobXp = jobXp;
+            Description = description;
         }
     }
 }
