@@ -8,3 +8,6 @@ obj/
 bin/
 appsettings.Development.json
 >>>>>>> 2b453c53320c07d315e92f265c77e11bca2105b0
+Migrations/
+.gitignore
+.vscode/

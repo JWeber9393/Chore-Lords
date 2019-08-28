@@ -7,13 +7,9 @@ namespace ChoreLords.Models
 {
     public class Chore
     {
-<<<<<<< HEAD
-
-=======
         [Key]
         public int Id { get; set; }
         public int LaborerId{get;set;}
->>>>>>> 11cfa81a6c5acafc5e26fdb89a57fea1bf035202
         Character Laborer{get;set;}
 
         Character Creator{get; set;}
@@ -31,7 +27,5 @@ namespace ChoreLords.Models
             JobXp = jobXp;
             Description = description;
         }
-
-        public int CharacterId{get;set;}
     }
 }
