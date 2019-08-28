@@ -1,0 +1,27 @@
+@using ChoreLords.Models
+@model List<Chore>
+
+<div class="container">
+  <h2>Dojo Activity Center</h2>
+  <h4>Welcome, @ViewBag.SessionName</h4>
+  <a href="/logout">Exit</a>           
+  <table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Test</th>
+            <th>Test</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var chore in Model){
+        <tr>
+            <td><a href="">Test</a>Test</td>
+            <td>Test</td>
+        </tr>}
+    </tbody>
+  </table>
+  <form asp-action="CreateChore" asp-controller="Home" method="get">
+    <button type="submit" class="btn btn-primary form-control">Add New Chore</button>
+  </form>
+  <h3 class="Text-danger">@ViewBag.ErrorMesage</h3>
+</div>

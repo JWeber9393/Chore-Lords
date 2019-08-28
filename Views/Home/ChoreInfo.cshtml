@@ -1,0 +1,11 @@
+@using ChoreLords.Models
+@model Chore
+<div class="container">
+    <a href="/logout">Logout</a>
+    <h1 class="title">@Model.Title</h1>
+    <div class="subcontainer">
+        <h3>ChoreLord: @Model.Creator</h3>
+        <h3>Description:</h3>
+        <p>@Model.Description</p>
+    </div>
+</div>

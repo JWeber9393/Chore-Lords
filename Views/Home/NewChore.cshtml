@@ -1,0 +1,50 @@
+@using ChoreLords.Models
+@model Chore
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <div class="container-fluid">
+        <div class="row">
+
+            <form asp-action="CreateChore" asp-controller="Home" method="post">
+
+                <a href="/dashboard">Dashboard</a>|<a href="/logout">Logout</a>
+
+                <h1>What ist thine request?</h1>
+                
+                <div class="form-group">
+                    <span class="text-danger" asp-validation-for="@Model.Gamename"></span>
+                    <label asp-for="@Model.Gamename"></label>
+                    <input class="form-control" asp-for="@Model.Gamename">
+                    
+                    <span class="text-danger" asp-validation-for="@Model.Date"></span>
+                    <label>Date and Time:</label>
+                    <input type="datetime-local" class="form-control" asp-for="@Model.Date">
+                    
+
+                    <span class="text-danger" asp-validation-for="@Model.Duration"></span>
+                    <label asp-for="@Model.Duration"></label>
+                    <input type="number" class="form-control" asp-for="@Model.Duration">
+
+                    <select class="form-control" asp-for="TimeType">
+                        <option value="Minutes">Minutes</option>
+                        <option value="Hours">Hours</option>
+                        <option value="Days">Days</option>
+                    </select>
+
+                    <textarea asp-for="@Model.Description" cols="50" rows="5"></textarea>
+                    
+                    <input type="hidden" asp-for="@Model.coordinatorId" value="@ViewBag.SessionId">
+                    <input type="hidden" asp-for="@Model.Coordinator" value="@ViewBag.SessionName">
+
+                    <br>
+                    <button type="submit" class="btn btn-primary form-control">Create Activity</button>
+                </div>
+
+            </form> 
+            <h3 class="text-danger">@ViewBag.ErrorMessage</h3>
+        </div>
+    </div>
+</div>

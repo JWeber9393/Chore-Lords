@@ -1,0 +1,64 @@
+﻿@using ChoreLords.Models
+@model LogRegWrapper
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <div class="container-fluid">
+        <div class="row">
+
+            <form asp-action="Register" asp-controller="LogReg" method="post">
+                <h1>Register</h1>
+                <div class="form-group">
+                    <span class="text-danger" asp-validation-for="newUser.fname"></span>
+                    <label asp-for="newUser.fname"></label>
+                    <input class="form-control" asp-for="newUser.fname">
+                    
+                    
+                    <span class="text-danger" asp-validation-for="newUser.lname"></span>
+                    <label asp-for="newUser.lname"></label>
+                    <input class="form-control" asp-for="newUser.lname">
+                    
+
+                    <span class="text-danger" asp-validation-for="newUser.alias"></span>
+                    <label asp-for="newUser.alias"></label>
+                    <input class="form-control" asp-for="newUser.alias">
+                    
+
+                    <span class="text-danger" asp-validation-for="newUser.password"></span>
+                    <label asp-for="newUser.password"></label>
+                    <input class="form-control" asp-for="newUser.password">
+                    
+                    
+                    <span class="text-danger" asp-validation-for="newUser.conf_pw"></span>
+                    <label asp-for="newUser.conf_pw"></label>
+                    <input class="form-control" asp-for="newUser.conf_pw">
+                    
+                    <br>
+                    <button type="submit" class="btn btn-primary form-control">Register</button>
+                </div>
+            </form>  
+
+            <form asp-action="Login" asp-controller="LogReg" method="post">
+                <h1>Login</h1>
+                <div class="form-group">
+                    <span class="text-danger" asp-validation-for="logUser.log_alias"></span>
+                    <label asp-for="@Model.logUser.log_alias"></label>
+                    <input class="form-control" asp-for="@Model.logUser.log_alias">
+                    
+                    
+                    <span class="text-danger" asp-validation-for="@Model.logUser.log_password"></span>
+                    <label asp-for="logUser.log_password"></label>
+                    <input class="form-control" asp-for="logUser.log_password">
+                    
+                    <br>
+                    <button type="submit" class="btn btn-primary form-control">Sign in</button>
+                    
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<h3 class="text-danger">@ViewBag.ErrorMessage</h3>
