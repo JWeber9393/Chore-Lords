@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ChoreLords.Models
 {
-    abstract class Character
+    public abstract class Character
     {
         public string Name;
         protected int Health;
@@ -54,5 +54,8 @@ namespace ChoreLords.Models
         // {
 
         // }
+
+
+        List<Chore> Chores {get; set;}
     }
 }

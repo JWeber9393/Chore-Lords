@@ -12,6 +12,9 @@ namespace ChoreLords.Models
         public int LaborerId{get;set;}
         Character Laborer{get;set;}
 
+        Character Creator{get; set;}
+
+
         public string Title;
         public int Money;
         public int JobXp;
