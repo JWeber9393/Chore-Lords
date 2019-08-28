@@ -59,6 +59,22 @@ namespace ChoreLords.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("select_avatar")]
+        public IActionResult SelectAvatar()
+        {
+            return View("AvatarSelect");
+        }
+
+        [HttpPost]
+        [Route("process_avatar")]
+        public IActionResult ProcessAvatar()
+        {
+            return RedirectToAction("Dashboard", "Home");
+        }
+
+
+
         [HttpPost]
         [Route("login")]
         public IActionResult Login(LogRegWrapper userSub)//Had to change because we are passing this a wrapper model

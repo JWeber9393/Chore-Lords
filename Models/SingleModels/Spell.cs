@@ -19,8 +19,5 @@ namespace ChoreLords.Models
             SpellSpd = 0;
             SpellArm = 0;
         }
-
-        Avatar Owner{ get; set; }
-        int AvatarId{ get;set; }
     }
 }
