@@ -28,3 +28,6 @@ C:\Users\RedRo\Desktop\Coding Dojo\Projects Folder\ChoreLords\obj\Debug\netcorea
 C:\Users\RedRo\Desktop\Coding Dojo\Projects Folder\ChoreLords\obj\Debug\netcoreapp2.2\ChoreLords.dll
 C:\Users\RedRo\Desktop\Coding Dojo\Projects Folder\ChoreLords\obj\Debug\netcoreapp2.2\ChoreLords.pdb
 C:\Users\RedRo\Desktop\Coding Dojo\Projects Folder\ChoreLords\obj\Debug\netcoreapp2.2\ChoreLords.csproj.CopyComplete
+C:\Users\RedRo\Desktop\Coding Dojo\Projects Folder\ChoreLords\obj\Debug\netcoreapp2.2\Razor\Views\Home\ChoreInfo.g.cshtml.cs
+C:\Users\RedRo\Desktop\Coding Dojo\Projects Folder\ChoreLords\obj\Debug\netcoreapp2.2\Razor\Views\Home\NewChore.g.cshtml.cs
+C:\Users\RedRo\Desktop\Coding Dojo\Projects Folder\ChoreLords\obj\Debug\netcoreapp2.2\Razor\Views\LogReg\AvatarSelect.g.cshtml.cs

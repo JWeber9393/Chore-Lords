@@ -7,14 +7,17 @@ namespace ChoreLords.Models
 {
     public class Chore
     {
-        public int CharacterId{get;set;}
+
         Character Laborer{get;set;}
+
+        Character Creator{get; set;}
+
 
         public string Title;
         public int Money;
         public int JobXp;
         public string Description;
-        
+
         public Chore(string title, int money, int jobXp, string description)
         {  
             Title = title;
@@ -22,5 +25,7 @@ namespace ChoreLords.Models
             JobXp = jobXp;
             Description = description;
         }
+
+        public int CharacterId{get;set;}
     }
 }
