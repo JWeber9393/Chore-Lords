@@ -16,7 +16,7 @@ namespace ChoreLords.Models
         public int Money;
         public int JobXp;
         public Chore(string title, int money, int jobXp)
-        {  
+        { 
             Title = title;
             Money = money;
             JobXp = jobXp;
