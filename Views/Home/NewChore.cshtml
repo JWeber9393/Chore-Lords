@@ -15,36 +15,29 @@
                 <h1>What ist thine request?</h1>
                 
                 <div class="form-group">
-                    <span class="text-danger" asp-validation-for="@Model.Gamename"></span>
-                    <label asp-for="@Model.Gamename"></label>
-                    <input class="form-control" asp-for="@Model.Gamename">
+                    <span asp-validation-for="@Model.Title" class="text-danger" ></span>
+                    <label asp-for="@Model.Title"></label>
+                    <input asp-for="@Model.Title" class="form-control">
                     
-                    <span class="text-danger" asp-validation-for="@Model.Date"></span>
-                    <label>Date and Time:</label>
-                    <input type="datetime-local" class="form-control" asp-for="@Model.Date">
+                    <span asp-validation-for="@Model.Money" class="text-danger" ></span>
+                    <label>Reward :</label>
+                    <input asp-for="@Model.Money" class="form-control">
                     
 
-                    <span class="text-danger" asp-validation-for="@Model.Duration"></span>
-                    <label asp-for="@Model.Duration"></label>
-                    <input type="number" class="form-control" asp-for="@Model.Duration">
-
-                    <select class="form-control" asp-for="TimeType">
-                        <option value="Minutes">Minutes</option>
-                        <option value="Hours">Hours</option>
-                        <option value="Days">Days</option>
-                    </select>
+                    <span asp-validation-for="@Model.JobXp" class="text-danger"></span>
+                    <label asp-for="@Model.JobXp"></label>
+                    <input asp-for="@Model.JobXp" class="form-control">
 
                     <textarea asp-for="@Model.Description" cols="50" rows="5"></textarea>
                     
-                    <input type="hidden" asp-for="@Model.coordinatorId" value="@ViewBag.SessionId">
-                    <input type="hidden" asp-for="@Model.Coordinator" value="@ViewBag.SessionName">
+                    <!-- TODO: Add hidden fields -->
 
                     <br>
-                    <button type="submit" class="btn btn-primary form-control">Create Activity</button>
+                    <button type="submit" class="btn btn-primary form-control">Create Chore</button>
                 </div>
-
-            </form> 
-            <h3 class="text-danger">@ViewBag.ErrorMessage</h3>
+            </form>
+            <!-- ViewBag unneccessary due to return View() in controller? -->
+            <!-- <h3 class="text-danger">@ViewBag.ErrorMessage</h3> -->
         </div>
     </div>
 </div>
