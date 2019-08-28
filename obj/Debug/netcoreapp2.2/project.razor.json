@@ -2996,6 +2996,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "Views\\LogReg\\AvatarSelect.cshtml",
+      "TargetPath": "Views\\LogReg\\AvatarSelect.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "Views\\Home\\ChoreInfo.cshtml",
       "TargetPath": "Views\\Home\\ChoreInfo.cshtml",
       "FileKind": "mvc"

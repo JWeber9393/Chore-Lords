@@ -14,6 +14,9 @@ namespace ChoreLords.Models
         protected int Armor;
         protected int Level;
         protected int Xp;
+
+        [Range(0, 1)]
+        protected int IsChorelord;
     
 
         public Character(string name)
