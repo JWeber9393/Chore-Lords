@@ -7,7 +7,9 @@ namespace ChoreLords.Models
 {
     public class Chore
     {
-        public int CharacterId{get;set;}
+        [Key]
+        public int Id { get; set; }
+        public int LaborerId{get;set;}
         Character Laborer{get;set;}
 
         public string Title;
