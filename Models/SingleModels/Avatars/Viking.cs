@@ -12,5 +12,7 @@ namespace ChoreLords.Models
             Power = 75;
         }
 
+        public virtual ICollection<Chore> Chores { get; set; }
+
     }
 }

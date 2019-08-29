@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ChoreLords.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 namespace ChoreLords.Controllers
 {
@@ -39,15 +40,18 @@ namespace ChoreLords.Controllers
         [HttpGet("dashboard")]
         public IActionResult Dashboard()
         {
-            // TODO: Add Linq query to fetch all Chores
-
             DashboardViewModel vm = new DashboardViewModel();
+            vm.Chores = GetAllChores();
+
             return View(vm);
         }
 
         [HttpPost("chore/create")]
         public IActionResult Create(DashboardViewModel modelData)
         {
+            // Dashboard is expecting this data and will complain without it
+            DashboardViewModel vm = new DashboardViewModel();
+            vm.Chores = GetAllChores();
             if(ModelState.IsValid)
             {
                 Chore newChore = modelData.Chore;
@@ -58,14 +62,6 @@ namespace ChoreLords.Controllers
                 return RedirectToAction("Index");
             }
             ModelState.AddModelError("Chore", "Chore is invalid");
-            // Dashboard is expecting this data and will complain without it // TODO: Refactor to a method
-            var allChores = _dbContext.Chores
-                .Include(u => u.Creator)
-                .OrderByDescending(m => m.CreatedAt)
-                .ToList();
-
-            DashboardViewModel vm = new DashboardViewModel();
-            vm.Chores = allChores;
             return View("Dashboard", vm);
         }
 
@@ -73,6 +69,16 @@ namespace ChoreLords.Controllers
         public IActionResult Show(int choreId)
         {
             return View("Dashboard");
+        }
+
+        // Helper functions
+        public List<Chore> GetAllChores()
+        {
+            var allChores = _dbContext.Chores
+                .Include(u => u.Creator)
+                .OrderByDescending(m => m.CreatedAt)
+                .ToList();
+            return allChores;
         }
     }
 }

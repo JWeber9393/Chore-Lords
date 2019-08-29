@@ -21,7 +21,7 @@ namespace ChoreLords.Models
         [RegularExpression("^[a-zA-Z ]*$")]
         [Display(Name = "Last Name:")]
         public string lname {get;set;}
-        
+
         [Required(ErrorMessage = "Enter an alias!")]
         [Display(Name = "Alias:")]
         public string alias {get;set;}
@@ -42,6 +42,7 @@ namespace ChoreLords.Models
         [Display(Name = "Confirm Password:")]
         public string conf_pw {get;set;}
 
+        // Nav Properties
         Character Character{get;set;}
         
     }

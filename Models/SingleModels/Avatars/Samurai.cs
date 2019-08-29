@@ -13,5 +13,7 @@ namespace ChoreLords.Models
             Intel = 50;
         }
 
+        public virtual ICollection<Chore> Chores { get; set; }
+
     }
 }

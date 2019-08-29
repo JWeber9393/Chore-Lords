@@ -13,5 +13,7 @@ namespace ChoreLords.Models
             Armor = 25;
         }
 
+        public virtual ICollection<Chore> Chores { get; set; }
+
     }
 }
