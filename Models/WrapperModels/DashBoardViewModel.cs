@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace ChoreLords.Models
 {
-    public class DashBoardViewModel
+    public class DashboardViewModel
     {
-        Chore NewChore { get; set; }
-        List<Chore> AllChores { get; set; }
+        public Chore Chore { get; set; }
+        public List<Chore> Chores { get; set; }
     }
 }

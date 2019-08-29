@@ -6,9 +6,9 @@ namespace ChoreLords.Models
     {
         public ChoreLordsContext(DbContextOptions options) : base(options) { }
 
-        public DbSet<User> users { get; set; }
-        public DbSet<Chore> chores { get; set; }
-        public DbSet<Character> characters { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Chore> Chores { get; set; }
+        public DbSet<Character> Characters { get; set; }
 
     }
 }

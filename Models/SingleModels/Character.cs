@@ -5,8 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ChoreLords.Models
 {
-    public abstract class Character
+    //Do we need to put our avatar subclasses in here?
+    public class Character
     {
+        [Key]
+        public int Id { get; set; }
         public string Name;
         protected int Health;
         protected int Wealth;
@@ -14,17 +17,13 @@ namespace ChoreLords.Models
         protected int Intel;
         protected int Armor;
         protected int Xp;
-
         [Range(1, 20)]
         protected int Level;
-        
-
         [Range(0, 1)]
         protected int IsChorelord;
 
 
-    
-
+        // CONSTRUCTORS
         public Character(string name)
         {
             Name = name;
@@ -36,7 +35,7 @@ namespace ChoreLords.Models
             Level = 1;
             Xp = 0;
         }
-        
+
         //Instantiates a ChoreLord
         public Character(string name, int IsChorelord)
         {
@@ -49,13 +48,15 @@ namespace ChoreLords.Models
             Level = 20;
             Xp = 50;
         }
+        // Nav Properties
+        List<Chore> Chores {get; set;}
+
+
 
         // public Attack(Character target)
         // {
 
         // }
-
-
-        List<Chore> Chores {get; set;}
     }
+    
 }

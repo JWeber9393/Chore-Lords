@@ -37,7 +37,7 @@ namespace ChoreLords.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (dbContext.users.Any(u => u.alias == newUser.alias))
+                if (dbContext.Users.Any(u => u.alias == newUser.alias))
                 {
                     string msg = "Alias not unique!";
                     return RedirectToAction("Index", new { msg = msg });
@@ -63,6 +63,7 @@ namespace ChoreLords.Controllers
         [Route("select_avatar")]
         public IActionResult SelectAvatar()
         {
+            
             return View("AvatarSelect");
         }
 
@@ -84,7 +85,7 @@ namespace ChoreLords.Controllers
             if (ModelState.IsValid)
             {
                 // If inital ModelState is valid, query for a user with provided email
-                var userInDb = dbContext.users.FirstOrDefault(u => u.alias == userSubmission.log_alias);
+                var userInDb = dbContext.Users.FirstOrDefault(u => u.alias == userSubmission.log_alias);
                 // If no user exists with provided email
                 if (userInDb == null)
                 {

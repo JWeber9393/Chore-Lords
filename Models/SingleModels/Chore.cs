@@ -11,17 +11,23 @@ namespace ChoreLords.Models
         public int Id { get; set; }
         public int LaborerId{get;set;}
         public Character Laborer{get;set;}
-
         public Character Creator{get; set;}
 
+        // FIELDS
+        public string Title{ get; set; }
+        public int Money{get; set;}
+        public int JobXp{get; set;}
+        public string Description{get; set;}
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
-        public string Title;
-        public int Money;
-        public int JobXp;
-        public string Description;
+        // CONSTRUCTORS
+        public Chore()
+        {
 
+        }
         public Chore(string title, int money, int jobXp, string description)
-        {  
+        {
             Title = title;
             Money = money;
             JobXp = jobXp;
