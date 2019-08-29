@@ -10,7 +10,7 @@ namespace ChoreLords.Models
     {
         [Key]
         public int Id { get; set; }
-        public string Name;
+        public string Name{get;set;}
         protected int Health;
         protected int Wealth;
         protected int Power;
@@ -20,7 +20,7 @@ namespace ChoreLords.Models
         [Range(1, 20)]
         protected int Level;
         [Range(0, 1)]
-        protected int IsChorelord;
+        protected int IsChorelord{get;set;}
 
 
         // CONSTRUCTORS
