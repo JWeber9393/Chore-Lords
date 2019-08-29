@@ -63,6 +63,7 @@ namespace ChoreLords.Controllers
         [Route("select_avatar")]
         public IActionResult SelectAvatar()
         {
+            
             return View("AvatarSelect");
         }
 
