@@ -50,7 +50,7 @@ namespace ChoreLords.Controllers
                     dbContext.SaveChanges();
                     //session user
                     HttpContext.Session.SetInt32("User", newUser.UserId);
-                    return RedirectToAction("Dashboard", "Home");
+                    return RedirectToAction("AvatarSelect");
                 }
             }
             else
@@ -61,7 +61,7 @@ namespace ChoreLords.Controllers
 
         [HttpGet]
         [Route("select_avatar")]
-        public IActionResult SelectAvatar()
+        public IActionResult AvatarSelect()
         {
             
             return View("AvatarSelect");
@@ -69,8 +69,26 @@ namespace ChoreLords.Controllers
 
         [HttpPost]
         [Route("process_avatar")]
-        public IActionResult ProcessAvatar()
+        public IActionResult ProcessAvatar(string name, string avatar)
         {
+            if(avatar == "Gladiator")
+            {
+                var newGladiator = new Gladiator(name);
+                dbContext.Add(newGladiator);
+                dbContext.SaveChanges();
+            }
+            if(avatar == "Samurai")
+            {
+                var newSamurai = new Samurai(name);
+                dbContext.Add(newSamurai);
+                dbContext.SaveChanges();
+            }
+            if(avatar == "Viking")
+            {
+                var newViking = new Viking(name);
+                dbContext.Add(newViking);
+                dbContext.SaveChanges();
+            }
             return RedirectToAction("Dashboard", "Home");
         }
 
@@ -124,12 +142,6 @@ namespace ChoreLords.Controllers
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Index", new { msg = msg });
-        }
-
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
     }
 }

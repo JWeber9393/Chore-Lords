@@ -11,7 +11,6 @@ namespace ChoreLords.Models
         int SpellIntel;
         int SpellSpd;
         int SpellArm;
-    
         public Spell()
         {
             SpellPwr = 0;
