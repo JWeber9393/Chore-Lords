@@ -5,11 +5,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ChoreLords.Models
 {
-    class Viking : Character
+    public class Viking : Character
     {
+        public int VikingId{get;set;}
         public Viking(string name) : base(name)
         {
-            Power = 75;
+            Power = 55;
+            Armor = 30;
         }
         public virtual ICollection<Chore> Chores { get; set; }
     }

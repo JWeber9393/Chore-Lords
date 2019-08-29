@@ -5,12 +5,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ChoreLords.Models
 {
-    class Samurai : Character
+    public class Samurai : Character
     {
+        public int SamuraiId{ get; set; }
+
         public Samurai(string name) : base(name)
         {
-            Power = 25;
+            Power = 17;
             Intel = 50;
+            Speed = 25;
         }
         public virtual ICollection<Chore> Chores { get; set; }
     }

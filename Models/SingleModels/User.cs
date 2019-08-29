@@ -43,7 +43,8 @@ namespace ChoreLords.Models
         public string conf_pw {get;set;}
 
         // Nav Properties
-        Character Character{get;set;}
+        public Character Character{get;set;}
         
     }
 }
+

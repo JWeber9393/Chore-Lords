@@ -8,17 +8,17 @@ namespace ChoreLords.Models
     //Do we need to put our avatar subclasses in here?
     public class Character
     {
-        [Key]
-        public int Id { get; set; }
+        public int CharacterId { get; set; }
         public string Name{get;set;}
-        protected int Health;
-        protected int Wealth;
-        protected int Power;
-        protected int Intel;
-        protected int Armor;
-        protected int Xp;
+        protected int Health{ get; set; }
+        protected int Wealth{ get; set; }
+        protected int Power{ get; set; }
+        protected int Intel{ get; set; }
+        protected int Speed{ get; set; }
+        protected int Armor{ get; set; }
+        protected int Xp{ get; set; }
         [Range(1, 20)]
-        protected int Level;
+        protected int Level{ get; set; }
         [Range(0, 1)]
         protected int IsChorelord{get;set;}
 
@@ -31,6 +31,7 @@ namespace ChoreLords.Models
             Wealth = 0;
             Power = 10;
             Intel = 10;
+            Speed = 10;
             Armor = 10;
             Level = 1;
             Xp = 0;
@@ -44,14 +45,15 @@ namespace ChoreLords.Models
             Wealth = 999999999;
             Power = 50000;
             Intel = 50000;
+            Speed = 50000;
             Armor = 50000;
             Level = 20;
             Xp = 50;
         }
         // Nav Properties
         List<Chore> Chores {get; set;}
-
-
+        Character Avatar{get;set;}
+        
 
         // public Attack(Character target)
         // {

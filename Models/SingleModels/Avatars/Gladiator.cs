@@ -5,12 +5,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ChoreLords.Models
 {
-    class Gladiator : Character
+    public class Gladiator : Character
     {
+        public int GladiatorId{ get; set; }
+
         public Gladiator(string name) : base(name)
         {
-            Power = 50;
+            Power = 40;
             Armor = 25;
+            Speed = 15;
         }
 
         public virtual ICollection<Chore> Chores { get; set; }
