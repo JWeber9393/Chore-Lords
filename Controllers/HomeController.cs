@@ -46,6 +46,12 @@ namespace ChoreLords.Controllers
             return View(vm);
         }
 
+        [HttpGet("chore/new")]
+        public IActionResult NewChore()
+        {
+            return View();
+        }
+
         [HttpPost("chore/create")]
         public IActionResult Create(DashboardViewModel modelData)
         {
