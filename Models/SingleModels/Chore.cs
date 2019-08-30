@@ -9,9 +9,10 @@ namespace ChoreLords.Models
     {
         [Key]
         public int Id { get; set; }
-        public int LaborerId{get;set;}
-        public Character Laborer{get;set;}
+        public int CharacterId{get;set;}
         public Character Creator{get; set;}
+
+        // public Character Laborer{get;set;}
 
         // FIELDS
         public string Title{ get; set; }

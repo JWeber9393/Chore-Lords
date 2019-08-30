@@ -6,12 +6,20 @@
   <table class="table table-dark table-striped">
     <thead>
         <tr>
-            <th>Test</th>
-            <th>Test</th>
+            <th>Title</th>
+            <th>Reward</th>
+            <th>Exp</th>
         </tr>
     </thead>
     <tbody>
-        <!-- Foreach to loop here to display all chores-->
+      @foreach (var chore in Model.Chores)
+      {
+          <tr>
+            <td>@chore.Title</td>
+            <td>@chore.Money</td>
+            <td>@chore.JobXp</td>
+          </tr>
+      }
     </tbody>
   </table>
   <form asp-action="NewChore" asp-controller="Home" method="get">

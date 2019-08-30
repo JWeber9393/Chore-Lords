@@ -14,6 +14,6 @@ namespace ChoreLords.Models
             Intel = 50;
             Speed = 25;
         }
-        public virtual ICollection<Chore> Chores { get; set; }
+        // public virtual ICollection<Chore> Chores { get; set; }
     }
 }

@@ -12,6 +12,6 @@ namespace ChoreLords.Models
             Power = 55;
             Armor = 30;
         }
-        public virtual ICollection<Chore> Chores { get; set; }
+        // public virtual ICollection<Chore> Chores { get; set; }
     }
 }

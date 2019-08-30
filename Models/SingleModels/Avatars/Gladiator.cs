@@ -15,7 +15,6 @@ namespace ChoreLords.Models
             Speed = 15;
         }
 
-        public virtual ICollection<Chore> Chores { get; set; }
 
     }
 }

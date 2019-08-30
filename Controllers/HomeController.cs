@@ -29,13 +29,13 @@ namespace ChoreLords.Controllers
         }
 
         // TODO: Add Users, Characters table to DbContext in order to use loggedInUser, currChar
-        // private User loggedInUser
-        // {
-        //     get { return _dbContext.Users.FirstOrDefault(u => u.Id == HttpContext.Session.GetInt32("UserId")); }
-        // }
+        private User loggedInUser
+        {
+            get { return _dbContext.Users.FirstOrDefault(u => u.UserId == UserSession); }
+        }
         // private Character currChar
         // {
-        //     get { return _dbContext.Characters.FirstOrDefault(u => u.Id == HttpContext.Session.GetInt32("CurrCharId")); }
+        //     get { return _dbContext.user.FirstOrDefault(u => u.Id == HttpContext.Session.GetInt32("CurrCharId")); }
         // }
         [HttpGet("dashboard")]
         public IActionResult Dashboard()
@@ -53,22 +53,18 @@ namespace ChoreLords.Controllers
         }
 
         [HttpPost("chore/create")]
-        public IActionResult Create(DashboardViewModel modelData)
+        public IActionResult CreateChore(Chore newChore)
         {
-            // Dashboard is expecting this data and will complain without it
-            DashboardViewModel vm = new DashboardViewModel();
-            vm.Chores = GetAllChores();
             if(ModelState.IsValid)
             {
-                Chore newChore = modelData.Chore;
-                // newChore.LaborerId = loggedInUser.Id; //! currChar not fully defined yet
+                newChore.CharacterId = loggedInUser.UserId; //! currChar not fully defined yet
 
                 _dbContext.Add(newChore);
                 _dbContext.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Dashboard");
             }
             ModelState.AddModelError("Chore", "Chore is invalid");
-            return View("Dashboard", vm);
+            return View("NewChore");
         }
 
         [HttpGet("chore/{ChoreId}")]

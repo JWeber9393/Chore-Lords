@@ -129,7 +129,7 @@ namespace ChoreLords.Controllers
                 }
                 else
                 {
-                    HttpContext.Session.SetInt32("User", userInDb.UserId);
+                    HttpContext.Session.SetInt32("UserId", userInDb.UserId);
                     return RedirectToAction("Dashboard", "Home");
                 }
             }
