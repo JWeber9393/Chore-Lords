@@ -7,7 +7,6 @@ namespace ChoreLords.Models
 {
     public class Viking : Character
     {
-        public int VikingId{get;set;}
         public Viking(string name) : base(name)
         {
             Power = 55;

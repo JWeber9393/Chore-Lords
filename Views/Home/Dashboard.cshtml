@@ -2,8 +2,7 @@
 @model DashboardViewModel
 
 <div class="container">
-  <h2>Dojo Activity Center</h2>
-  <h4>Welcome, @ViewBag.SessionName</h4>
+  <h2>The Chore Lord's Bounties</h2>
   <table class="table table-dark table-striped">
     <thead>
         <tr>
@@ -18,5 +17,5 @@
   <form asp-action="CreateChore" asp-controller="Home" method="get">
     <button type="submit" class="btn btn-primary form-control">Add New Chore</button>
   </form>
-  <h3 class="Text-danger">@ViewBag.ErrorMesage</h3>
+  <!-- <h3 class="Text-danger">@ViewBag.ErrorMesage</h3> -->
 </div>

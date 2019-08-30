@@ -23,11 +23,13 @@ namespace ChoreLords.Controllers
         [Route("")]
         public IActionResult Index(string msg)//Register Page
         {
+            LogRegWrapper vm = new LogRegWrapper();
+            vm.allUsers = dbContext.Users.ToList();
             if (msg != null)
             {
                 ViewBag.ErrorMessage = msg;
             }
-            return View();
+            return View(vm);
         }
 
 
@@ -63,38 +65,31 @@ namespace ChoreLords.Controllers
         [Route("select_avatar")]
         public IActionResult AvatarSelect()
         {
-            var vm = new AvatarSelectViewModel();
-            return View("AvatarSelect", vm);
-        }
-
-        string TempNameString;
-        // An unhandled exception occurred while processing the request.
-        // InvalidOperationException: No route matches the supplied values.
-        public IActionResult AddName(AvatarSelectViewModel modelData)
-        {
-            TempNameString = modelData.Name;
-            return RedirectToAction("AvatarSelect", TempNameString);
+            return View("AvatarSelect");
         }
         
-        public IActionResult CreateGladiator()
+        [HttpPost("/addgladiator")]
+        public IActionResult CreateGladiator(AvatarSelectViewModel ModelData)
         {
-            var newGladiator = new Gladiator(TempNameString);
+            var newGladiator = new Gladiator(ModelData.Name);
                 dbContext.Add(newGladiator);
                 dbContext.SaveChanges();
             return RedirectToAction("Dashboard", "Home");
         }
 
-        public IActionResult CreateSamurai(AvatarSelectViewModel modelData)
+        [HttpPost("/addsamurai")]
+        public IActionResult CreateSamurai(AvatarSelectViewModel ModelData)
         {
-            var newGladiator = new Samurai(TempNameString);
+            var newGladiator = new Samurai(ModelData.Name);
                 dbContext.Add(newGladiator);
                 dbContext.SaveChanges();
             return RedirectToAction("Dashboard", "Home");
         }
 
-        public IActionResult CreateViking(AvatarSelectViewModel modelData)
+        [HttpPost("/addviking")]
+        public IActionResult CreateViking(AvatarSelectViewModel ModelData)
         {
-            var newGladiator = new Viking(TempNameString);
+            var newGladiator = new Viking(ModelData.Name);
                 dbContext.Add(newGladiator);
                 dbContext.SaveChanges();
             return RedirectToAction("Dashboard", "Home");

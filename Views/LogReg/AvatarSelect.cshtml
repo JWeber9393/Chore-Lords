@@ -2,18 +2,30 @@
 <div class="text-center">
     <div class="container-fluid">
         <div class="row">
-            <form method="post">
+
+            <form asp-controller="LogReg" asp-action="CreateGladiator" method="post">
                 <div class="form-group">
-                    <label for="name">What is your Avatar's Name?</label>
+                    <label name="name">What is your Gladiator's Name?</label>
                     <input asp-for="@Model.Name">
-                    <button asp-controller="LogReg" asp-action="AddName">Select Name</button>
+                    <button>Select Gladiator</button>
                 </div>
             </form>
-            <div>
-                <p><a asp-controller="LogReg" asp-action="CreateGladiator">Gladiator</a></p>
-                <p><a asp-controller="LogReg" asp-action="CreateSamurai">Samurai</a></p>
-                <p><a asp-controller="LogReg" asp-action="CreateViking">Viking</a></p>
-            </div>
+            <br>
+            <form asp-controller="LogReg" asp-action="CreateSamurai" method="post">
+                <div class="form-group">
+                    <label name="name">What is your Samurai's Name?</label>
+                    <input asp-for="@Model.Name">
+                    <button>Select Samurai</button>
+                </div>
+            </form>
+            <br>
+            <form asp-controller="LogReg" asp-action="CreateViking" method="post">
+                <div class="form-group">
+                    <label name="name">What is your Viking's Name?</label>
+                    <input asp-for="@Model.Name">
+                    <button>Select Viking</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

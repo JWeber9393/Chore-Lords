@@ -9,5 +9,6 @@ namespace ChoreLords.Models
     {
         public User newUser{get;set;}
         public LogUser logUser{ get; set; }
+        public List<User> allUsers{get;set;}
     }
 }

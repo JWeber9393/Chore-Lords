@@ -7,8 +7,7 @@ namespace ChoreLords.Models
 {
     public class Samurai : Character
     {
-        public int SamuraiId{ get; set; }
-
+        
         public Samurai(string name) : base(name)
         {
             Power = 17;
