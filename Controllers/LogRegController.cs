@@ -63,32 +63,38 @@ namespace ChoreLords.Controllers
         [Route("select_avatar")]
         public IActionResult AvatarSelect()
         {
-            
-            return View("AvatarSelect");
+            var vm = new AvatarSelectViewModel();
+            return View("AvatarSelect", vm);
         }
 
-        [HttpPost]
-        [Route("process_avatar")]
-        public IActionResult ProcessAvatar(string name, string avatar)
+        string TempNameString;
+        // Removed httppost and route - prevented function from being called
+        public IActionResult AddName(AvatarSelectViewModel modelData)
         {
-            if(avatar == "Gladiator")
-            {
-                var newGladiator = new Gladiator(name);
+            TempNameString = modelData.Name;
+            return RedirectToAction("AvatarSelect");
+        }
+        public IActionResult CreateGladiator(AvatarSelectViewModel modelData)
+        {
+            var newGladiator = new Gladiator(TempNameString);
                 dbContext.Add(newGladiator);
                 dbContext.SaveChanges();
-            }
-            if(avatar == "Samurai")
-            {
-                var newSamurai = new Samurai(name);
-                dbContext.Add(newSamurai);
+            return RedirectToAction("Dashboard", "Home");
+        }
+
+        public IActionResult CreateSamurai(AvatarSelectViewModel modelData)
+        {
+            var newGladiator = new Samurai(TempNameString);
+                dbContext.Add(newGladiator);
                 dbContext.SaveChanges();
-            }
-            if(avatar == "Viking")
-            {
-                var newViking = new Viking(name);
-                dbContext.Add(newViking);
+            return RedirectToAction("Dashboard", "Home");
+        }
+
+        public IActionResult CreateViking(AvatarSelectViewModel modelData)
+        {
+            var newGladiator = new Viking(TempNameString);
+                dbContext.Add(newGladiator);
                 dbContext.SaveChanges();
-            }
             return RedirectToAction("Dashboard", "Home");
         }
 
