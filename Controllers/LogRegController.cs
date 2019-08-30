@@ -68,13 +68,15 @@ namespace ChoreLords.Controllers
         }
 
         string TempNameString;
-        // Removed httppost and route - prevented function from being called
+        // An unhandled exception occurred while processing the request.
+        // InvalidOperationException: No route matches the supplied values.
         public IActionResult AddName(AvatarSelectViewModel modelData)
         {
             TempNameString = modelData.Name;
-            return RedirectToAction("AvatarSelect");
+            return RedirectToAction("AvatarSelect", TempNameString);
         }
-        public IActionResult CreateGladiator(AvatarSelectViewModel modelData)
+        
+        public IActionResult CreateGladiator()
         {
             var newGladiator = new Gladiator(TempNameString);
                 dbContext.Add(newGladiator);
